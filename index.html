@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Search for music albums by your favorite artists!">
+    <title>Music Album Finder</title>
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+</head>
+<body>
+    <div class="container">
+        <div id="notification-container"></div>
+        <main class="main-content">
+            <div class="header-section">
+                <h1 class="page-title">Music Album Search</h1>
+                <form id="searchForm">
+                    <input type="text" id="artistInput" placeholder="Enter artist name">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div class="content-below-header">
+                <div id="favorites-section">
+                    <div id="favorites">
+                        <h2>Favorite Artists</h2>
+                        <ul>
+                            </ul>
+                    </div>
+                    <div class="favorite-actions">
+                        <button id="showRatedAlbumsButton">Show Rated Albums</button>
+                        <button id="unrateAllButton">Unrate All Albums</button>
+                    </div>
+                </div>
+                <div id="results">
+                    </div>
+            </div>
+
+            <button id="loadMoreButton">Show more</button>
+        </main>
+    </div>
+
+    <div id="rating-popup" class="rating-popup" style="display: none;">
+        <h3>Rate Album</h3>
+        <div class="rating-buttons-container">
+            </div>
+        <button id="cancel-rating-button" class="cancel-rating-button">✖</button>
+    </div>
+
+    <div id="unrate-all-popup" class="rating-popup" style="display: none;">
+        <h3>Confirm Deletion</h3>
+        <p>Are you sure you want to delete all saved ratings? This action cannot be undone.</p>
+        <div class="rating-buttons-container">
+            <button id="confirm-unrate-all" class="rating-number-button">Yes, delete all</button>
+            <button id="cancel-unrate-all" class="rating-number-button">Cancel</button>
+        </div>
+    </div>
+
+    <script src="./js/api.js" defer></script>
+    <script src="./js/ui.js" defer></script>
+    <script src="./js/main.js" defer></script>
+</body>
+</html>

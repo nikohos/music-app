@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Source+Sans+Pro:wght@300&display=swap');
+
+body {
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+    padding: 0;
+    background-color: transparent;
+    color: #444; /* Tummempi tekstiväri vaalealle taustalle */
+    margin: 0;
+    background-image: none;
+}
+
+.container {
+    display: flex;
+    max-width: none; /* Poistetaan maksimileveys, jotta se voi olla koko sivun leveydeltä */
+    margin: 0; /* Poistetaan marginaalit */
+    padding: 0; /* Poistetaan sisäinen tila */
+    background-color: transparent; /* Tehdään tausta läpinäkyväksi */
+    border-radius: 0; /* Poistetaan pyöristetyt kulmat */
+    box-shadow: none; /* Poistetaan varjostus */
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column; /* Pääsisältö edelleen pystysuunnassa */
+    flex: 2; /* Ottaa enemmän tilaa */
+    padding-right: 0; /* Poistetaan oikea sisäinen tila */
+    margin-right: 0; /* Poistetaan oikea marginaali */
+}
+
+.header-section {
+    background-color: #0a0a0a; /* Todella tumma tausta yläosalle */
+    color: #fff; /* Vaalea tekstiväri tummalle taustalle */
+    padding: 40px 20px; /* Säilytetään sisäinen tila tummalla osiolla */
+    margin-bottom: 0; /* Poistetaan marginaali tumman osion alle */
+    text-align: center; /* Keskitetään otsikko ja lomake */
+}
+
+.header-section form {
+    justify-content: center; /* Keskitetään hakulomakkeen elementit */
+}
+
+.header-section h1,
+.header-section label,
+.header-section input::placeholder,
+.header-section button {
+    color: #fff; /* Varmistetaan tekstin ja paikkamerkin väri tummalla taustalla */
+}
+
+.content-below-header {
+    display: flex; /* Asetetaan suosikit-osio ja tulokset vierekkäin */
+    gap: 0; /* Poistetaan väli suosikkien ja tulosten välistä */
+    margin-bottom: 0; /* Poistetaan marginaali alaosasta */
+    background-color: transparent; /* Läpinäkyvä tausta */
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #333;
+    color: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    margin-right: 20px; /* Lisätään marginaalia oikealle */
+}
+
+.page-title,
+#favorites h2,
+#results h2,
+.rating-popup h3 {
+    font-family: 'Montserrat', sans-serif; /* Otsikot */
+    font-weight: 700; /* Varmistetaan bold-tyyli */
+}
+
+.page-title {
+    font-size: 5rem;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+input[type="text"] {
+    /* flex: 1; Poistetaan joustava leveys, jotta voimme määrittää kiinteämmän leveyden */
+    width: 600px; 
+    padding: 10px; 
+    font-size: 1rem; 
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #fff;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+    margin-right: 10px; /* Lisää tilaa napin viereen */
+    display: inline-block; /* Mahdollistaa vierekkäisen sijoittelun napin kanssa */
+    box-sizing: border-box; /* Sisällyttää paddingin ja borderin leveyteen ja korkeuteen */
+    height: 50px;
+}
+
+button {
+    padding: 10px 15px; 
+    margin-bottom: 15px; /* Säilytetään marginaali muiden elementtien kanssa */
+    font-size: 1rem;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif; /* Painikkeet otsikkofontilla */
+    display: inline-block; /* Sijoitetaan samalle riville hakukentän kanssa */
+    height: 50px; /* Sama korkeus kuin hakukentällä */
+    line-height: 16px; 
+}
+
+button,
+#loadMoreButton {
+    padding: 15px 25px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif; /* Painikkeet otsikkofontilla */
+}
+
+button:hover,
+#loadMoreButton:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#favorites-section {
+    flex: 1; /* Ottaa puolet saatavilla olevasta tilasta */
+    background-color: #bfc0c0;; 
+    color: #212529;
+    padding: 20px;
+    border-radius: 0; /* Poistetaan pyöristetyt kulmat */
+    display: flex;
+    flex-direction: column; /* Suosikkilista ja napit allekkain */
+    margin-right: 0; /* Poistetaan marginaali oikealta */
+}
+
+#favorites {
+    margin-bottom: 20px; /* Tilaa suosikkilistan alle ennen nappeja */
+}
+
+.favorite-actions button {
+    display: inline-block; 
+    width: auto; 
+    margin-bottom: 10px; /* Tilaa nappien väliin */
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    background-color: #6c757d; /* Esimerkiksi harmaa tausta napeille */
+    transition: background-color 0.3s;
+}
+
+.favorite-actions button:hover {
+    background-color: #6c757d;
+}
+
+
+#results {
+    flex: 2; /* Ottaa enemmän tilaa albumeille */
+    margin-top: 0; /* Poistetaan ylämarginaali */
+    margin-bottom: 0; /* Poistetaan alareunus */
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 0; /* Poistetaan pyöristetyt kulmat */
+    color: #212529; /* Melkein musta tekstiväri */
+}
+
+#results h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+#favorites h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+#favorites ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#favorites li {
+    margin-bottom: 0px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Lisätään transitiot */
+    font-family: 'Montserrat', sans-serif; /* Vaihdetaan Montserrat-fonttiin */
+}
+
+#favorites li.removing {
+    opacity: 0;
+    transform: translateX(20px); /* Liukuu hieman sivulle pois */
+}
+
+#favorites li button {
+    padding: 2px 4px; 
+    font-size: 0.6rem; 
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: #eee;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: auto; /* Anna leveyden määräytyä sisällön mukaan */
+    height: auto; /* Anna korkeuden määräytyä sisällön mukaan */
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+#favorites li button:hover {
+    background-color: #eee;
+    color: #333;
+}
+
+#notification-container {
+    position: fixed; /* Pysyy paikoillaan vieritettäessäkin */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 128, 0, 0.8); /* Vihreä, läpinäkyvä */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    z-index: 1000; /* Varmistaa, että on muiden elementtien päällä */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+#notification-container.show {
+    opacity: 1;
+}
+
+.rating-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #333;
+    color: #eee;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1001; /* Varmistaa, että on muiden elementtien päällä */
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+.rating-popup h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Otsikko */
+}
+
+.rating-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.rating-number-button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #444;
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif; /* Painikkeet otsikkofontilla */
+}
+
+.rating-number-button:hover {
+    background-color: #555;
+}
+
+.save-favorite {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif; /* Painike otsikkofontilla */
+}
+
+.save-favorite:hover {
+    background-color: #ffaa00;
+}
+
+.favorite-artist {
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s;
+    font-family: 'Montserrat', sans-serif; /* Otsikkofontti */
+}
+
+.favorite-artist:hover {
+    color: #ffcc00;
+}
+
+.loader {
+    border: 4px solid #fff;
+    border-top: 4px solid #ffcc00;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+.album-rating-display {
+    flex-shrink: 0; /* Ei kutistu */
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    width: auto; /* Automaattinen leveys sisällön mukaan */
+    text-align: center; /* Keskittää tekstin */
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+.album-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.album-container {
+    display: flex;
+    align-items: baseline; /* Nimet ja arviot samalle pohjaviivalle */
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #f9f9f9; /* Melkein valkoinen tausta */
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    gap: 20px; /* Lisätään hieman tilaa elementtien väliin */
+    margin-bottom: 3px;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+    color: #212529; /* Melkein musta tekstiväri */
+}
+
+.album-info {
+    flex-grow: 1; /* Ottaa kaiken vapaan tilan */
+    display: flex;
+    align-items: baseline; /* Nimi ja vuosi samalle pohjaviivalle */
+    gap: 10px; /* Tilaa nimen ja vuoden väliin */
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+    color: #212529; /* Varmistetaan tekstin väri myös tässä */
+}
+
+.click-to-rate {
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+.click-to-rate:hover {
+    color: #ffcc00;
+}
+
+.cancel-rating-button {
+    width: 40px; 
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+.cancel-rating-button:hover {
+    opacity: 0.7;
+}
+
+.unrate-button {
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #f44336; /* Punainen väri */
+    color: #eee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+.unrate-button:hover {
+    background-color: #d32f2f;
+}
+
+.view-on-musicbrainz,
+#showRatedAlbumsButton,
+#unrateAllButton {
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #6c757d; /* Harmaa */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    margin-left: 10px; /* Tilaa "Save as Favorite" -napista */
+    font-family: 'Montserrat', sans-serif; /* Painikkeet otsikkofontilla */
+    display: inline-block; 
+    width: auto; 
+    text-align: center;
+    white-space: nowrap; 
+}
+
+
+.view-on-musicbrainz:hover,
+#showRatedAlbumsButton:hover,
+#unrateAllButton:hover {
+    background-color: #ffaa00;;
+}
+
+
+
+.rated-albums-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.rated-albums-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Sijoittaa tiedot eri puolille */
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background-color: #f9f9f9; /* Melkein valkoinen tausta */
+    border-radius: 5px;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+    color: #212529; /* Melkein musta tekstiväri */
+}
+
+.rated-artist-id {
+    flex-grow: 1; /* Ottaa enemmän tilaa */
+    margin-right: 10px;
+    font-size: 0.9rem;
+    color: #212529; /* Melkein musta tekstiväri */
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+}
+
+.rated-album-title {
+    flex-grow: 2; /* Ottaa vielä enemmän tilaa */
+    font-weight: bold;
+    font-family: 'Source Sans Pro', sans-serif; /* Leipäteksti */
+    color: #212529; /* Melkein musta tekstiväri */
+}
+
+input[type="text"]::placeholder {
+    color: #aaa; /* Vaaleampi harmaa */
+    opacity: 1; /* Varmistetaan, ettei se ole liian läpinäkyvä */
+}
+.album-actions {
+    display: flex;
+    gap: 10px; /* Välitys painikkeiden välillä */
+    margin-top: 10px;
+    align-items: center; /* Ensures buttons stay level */
+    flex-wrap: nowrap; 
+}
+
+.album-actions button {
+    display: inline-block; 
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap; 
+}
+
+.save-favorite {
+    background-color: #ffcc00; 
+    color: black;
+    flex-grow: 1; 
+    max-width: 180px; 
+}
+
+.view-on-musicbrainz {
+    background-color: #ffcc00; 
+    color: black;
+    font-size: 12px; 
+    padding: 6px 9px; 
+    flex-grow: 0; 
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

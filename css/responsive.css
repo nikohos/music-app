@@ -1,0 +1,228 @@
+/* Pienemmät näytöt (alle 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 20px 10px; /* Vähennetään sivun sisäistä tilaa pienemmillä näytöillä */
+    }
+
+    .container {
+        padding: 10px; /* Vähennetään containerin sisäistä tilaa */
+        margin: 10px auto; /* Vähennetään ylä- ja alamarginaalia, keskitetään vaakasuunnassa */
+        flex-direction: column; /* Muutetaan flex-kontin suunta pystysuuntaiseksi, jolloin pääsisältö ja sivupalkki menevät päällekkäin */
+    }
+
+    .main-content {
+        padding-right: 0; /* Poistetaan oikea sisäinen tila */
+        margin-right: 0; /* Poistetaan oikea marginaali */
+        margin-bottom: 20px; /* Lisätään tilaa pääsisällön alle */
+    }
+
+    .sidebar {
+        margin-right: 0; /* Poistetaan oikea marginaali */
+        margin-bottom: 20px; /* Lisätään tilaa sivupalkin alle */
+        width: 100%; /* Sivupalkki ottaa koko leveyden */
+        padding: 15px; /* Vähennetään sivupalkin sisäistä tilaa */
+    }
+
+    .page-title {
+        font-size: 2rem; /* Pienennetään pääotsikon kokoa */
+        margin-bottom: 20px; /* Vähennetään otsikon alla olevaa tilaa */
+        text-align: center; /* Keskitetään otsikko */
+    }
+
+    form {
+        flex-direction: column; /* Muutetaan hakulomakkeen elementit pystysuuntaiseksi */
+        margin-bottom: 20px; /* Vähennetään lomakkeen alla olevaa tilaa */
+    }
+
+    input[type="text"],
+    button[type="submit"] {
+        width: 100%; /* Hakukenttä ja -nappi ottavat koko leveyden */
+        margin-bottom: 10px; /* Lisätään tilaa hakukentän ja -napin alle */
+        font-size: 1rem; /* Pidetään fonttikoko samana */
+        padding: 10px; /* Pidetään sisäinen tila samana */
+    }
+
+    button {
+        padding: 10px 20px; /* Piennetään yleisen napin sisäistä tilaa */
+        font-size: 0.9rem; /* Pienennetään yleisen napin fonttikokoa */
+    }
+
+    #results {
+        margin-top: 30px; /* Lisätään tilaa tulosten yläpuolelle */
+        padding: 15px; /* Vähennetään tulosten sisäistä tilaa */
+    }
+
+    #results h2 {
+        font-size: 1.5rem; /* Pienennetään tulosten otsikon kokoa */
+    }
+
+    #loadMoreButton {
+        padding: 10px 15px; /* Piennetään "Show more" -napin sisäistä tilaa */
+        font-size: 0.9rem; /* Pienennetään "Show more" -napin fonttikokoa */
+        margin-top: 20px; /* Lisätään tilaa napin yläpuolelle */
+    }
+
+    #favorites h2 {
+        font-size: 1.3rem; /* Pienennetään suosikkien otsikon kokoa */
+        margin-bottom: 10px; /* Vähennetään otsikon alla olevaa tilaa */
+    }
+
+    #favorites li {
+        font-size: 0.9rem; /* Pienennetään suosikkilistan itemien fonttikokoa */
+    }
+
+    #favorites li button {
+        padding: 5px 8px; /* Piennetään suosikkilistan poistonapin sisäistä tilaa */
+        font-size: 0.8rem; /* Pienennetään poistonapin fonttikokoa */
+    }
+
+    #showRatedAlbumsButton,
+    #unrateAllButton {
+        padding: 8px 15px; /* Piennetään näiden nappien sisäistä tilaa */
+        font-size: 0.9rem; /* Pienennetään näiden nappien fonttikokoa */
+        margin-top: 10px; /* Lisätään tilaa nappien yläpuolelle */
+    }
+
+    .rated-albums-list li {
+        font-size: 0.85rem; /* Pienennetään arvioitujen albumien listan itemien fonttikokoa */
+        padding: 8px; /* Vähennetään itemien sisäistä tilaa */
+    }
+
+    .rated-artist-id {
+        display: none; /* Piilotetaan artistin ID pienemmillä näytöillä */
+    }
+
+    .album-container {
+        flex-direction: column; /* Muutetaan albumi-containerin elementit pystysuuntaiseksi */
+        align-items: flex-start; /* Linjataan elementit vasemmalle */
+        gap: 3px; /* Vähennetään elementtien välistä tilaa */
+        margin-bottom: 3px; /* Vähennetään albumien välistä marginaalia */
+    }
+
+    .album-info {
+        flex-direction: column; /* Muutetaan albumi-infon elementit pystysuuntaiseksi */
+        align-items: flex-start; /* Linjataan elementit vasemmalle */
+        gap: 5px; /* Lisätään hieman tilaa albumitietojen väliin */
+    }
+
+    .artist-info {
+        margin-bottom: 40px; /* Säädetään artistin infon alla olevaa marginaalia */
+    }
+
+    .album-rating-display {
+        font-size: 0.8rem; /* Pienennetään albumien rating-näytön fonttikokoa */
+        padding: 4px 8px; /* Piennetään rating-näytön sisäistä tilaa */
+    }
+
+    .view-on-musicbrainz,
+    .save-favorite {
+        font-size: 0.8rem; /* Pienennetään näiden nappien fonttikokoa */
+        padding: 8px 12px; /* Piennetään näiden nappien sisäistä tilaa */
+        margin-left: 0; /* Poistetaan vasen marginaali */
+        margin-top: 5px; /* Lisätään ylämarginaalia */
+    }
+
+    .rating-popup {
+        padding: 15px; /* Vähennetään rating-popupin sisäistä tilaa */
+    }
+
+    .rating-popup h3 {
+        font-size: 1.3rem; /* Pienennetään rating-popupin otsikon kokoa */
+        margin-bottom: 10px; /* Vähennetään otsikon alla olevaa tilaa */
+    }
+
+    .rating-number-button {
+        padding: 8px; /* Piennetään rating-nappien sisäistä tilaa */
+        font-size: 0.9rem; /* Pienennetään rating-nappien fonttikokoa */
+    }
+
+    .cancel-rating-button {
+        width: 30px; /* Pienennetään peruutusnapin leveyttä */
+        height: 30px; /* Pienennetään peruutusnapin korkeutta */
+        font-size: 1.2rem; /* Pienennetään peruutusnapin fonttikokoa */
+    }
+}
+
+/* Keskikokoiset näytöt (600px ja alle) */
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Muutetaan flex-kontin suunta pystysuuntaiseksi */
+    }
+
+    .main-content {
+        padding-right: 0; /* Poistetaan oikea sisäinen tila */
+        margin-right: 0; /* Poistetaan oikea marginaali */
+        margin-bottom: 20px; /* Lisätään tilaa pääsisällön alle */
+    }
+
+    .sidebar {
+        margin-right: 0; /* Poistetaan oikea marginaali */
+        margin-bottom: 20px; /* Lisätään tilaa sivupalkin alle */
+        width: 100%; /* Sivupalkki ottaa koko leveyden */
+    }
+}
+
+/* Tabletit (768px ja alle) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Vähennetään containerin sisäistä tilaa */
+    }
+
+    .main-content {
+        padding-right: 0; /* Poistetaan oikea sisäinen tila */
+        margin-right: 0; /* Poistetaan oikea marginaali */
+    }
+
+    .sidebar {
+        margin-right: 0; /* Poistetaan oikea marginaali */
+        width: 100%; /* Sivupalkki ottaa koko leveyden */
+    }
+
+    .page-title {
+        font-size: 2.2rem; /* Pienennetään pääotsikon kokoa */
+    }
+
+    form {
+        margin-bottom: 25px; /* Vähennetään lomakkeen alla olevaa tilaa */
+    }
+
+    input[type="text"] {
+        font-size: 1.1rem; /* Pidetään hakukentän fonttikoko suhteellisen suurena */
+        padding: 12px; /* Pidetään hakukentän sisäinen tila suhteellisen suurena */
+    }
+
+    button {
+        font-size: 0.9rem; /* Pienennetään yleisen napin fonttikokoa */
+        padding: 12px 20px; /* Pidetään yleisen napin sisäinen tila samana */
+    }
+
+    #results {
+        margin-top: 40px; /* Lisätään tilaa tulosten yläpuolelle */
+        padding: 15px; /* Vähennetään tulosten sisäistä tilaa */
+    }
+
+    #results h2 {
+        font-size: 1.6rem; /* Pienennetään tulosten otsikon kokoa */
+    }
+}
+
+/* Pienet kannettavat (992px ja alle) */
+@media (max-width: 992px) {
+    .container {
+        padding: 15px; /* Vähennetään containerin sisäistä tilaa */
+    }
+
+    .main-content {
+        padding-right: 15px; /* Vähennetään oikeaa sisäistä tilaa */
+        margin-right: 15px; /* Vähennetään oikeaa marginaalia */
+    }
+
+    .sidebar {
+        margin-right: 15px; /* Vähennetään oikeaa marginaalia */
+        padding: 15px; /* Vähennetään sivupalkin sisäistä tilaa */
+    }
+
+    .page-title {
+        font-size: 2.3rem; /* Pienennetään pääotsikon kokoa hieman */
+    }
+}
