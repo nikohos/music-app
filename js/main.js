@@ -109,17 +109,17 @@ async function loadReleases() {
             currentOffset += albums.length; // Päivittää offsetia ladattujen albumien määrällä.
 
             if (albums.length === 10) {
-                loadMoreButton.style.display = "block"; // Näyttää "Show more" -napin, jos vielä on mahdollisesti lisää albumeita.
+                loadMoreButton.style.display = "block"; 
                 loadMoreButton.textContent = "Show more";
                 loadMoreButton.disabled = false; // Ottaa "Show more" -napin uudelleen käyttöön.
             } else {
-                loadMoreButton.style.display = "none"; // Piilottaa "Show more" -napin, jos kaikki albumit on ladattu.
+                loadMoreButton.style.display = "none"; 
             }
         } else if (currentOffset === 0) {
             showMessage("No official studio albums found."); // Näyttää viestin, jos virallisia studioalbumeita ei löydy.
-            loadMoreButton.style.display = "none";
+            loadMoreButton.style.display = "none"; 
         } else {
-            loadMoreButton.style.display = "none"; // Piilottaa "Show more" -napin, jos ei enää ole lisää albumeita ladattavaksi.
+            loadMoreButton.style.display = "none"; 
         }
 
     } catch (err) {
@@ -129,6 +129,7 @@ async function loadReleases() {
         loadMoreButton.disabled = false; // Ottaa "Show more" -napin uudelleen käyttöön virheen sattuessa.
     }
 }
+
 
 function saveFavoriteArtist(artistId, artistName) {
     // Tallentaa valitun artistin paikalliseen tallennustilaan (localStorage).

@@ -116,12 +116,15 @@ button {
     line-height: 16px; 
 }
 
-button,
+
 #loadMoreButton {
     padding: 15px 25px;
-    margin-bottom: 15px;
     font-size: 1rem;
-    background-color: transparent;
+    display: block;
+    text-align: center;
+    margin: 15px auto;
+    width: 20%;
+    background-color: #6c757d;
     color: #fff;
     border: 1px solid #fff;
     border-radius: 5px;
@@ -131,9 +134,14 @@ button,
     font-family: 'Montserrat', sans-serif; /* Painikkeet otsikkofontilla */
 }
 
+.button-wrapper {
+    text-align: center;
+    margin-top: 15px;
+  }
+
 button:hover,
 #loadMoreButton:hover {
-    background-color: #fff;
+    background-color: #bfc0c0;
     color: #000;
 }
 
