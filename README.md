@@ -37,8 +37,8 @@ A music album search application that allows you to find albums by your favorite
 
 ## License
 
-This project is licensed under the [LICENSE HERE] License.
+This project is licensed under the MIT License.
 
 ## Developer
 
-[nikohos]
+nikohos
